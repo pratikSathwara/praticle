@@ -1,1 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
+$primary : #002C62;
+$secondary : #F5B224;
+$orange : #F12B11;
+.gradient-btn{
+    background: linear-gradient(to right, $orange , $secondary); 
+    color: #fff; 
+    border: 0;    
+    &:hover{
+        background: linear-gradient(to right, $secondary ,  $orange);  
+        color: #fff;
+    }
+ }

@@ -1,0 +1,98 @@
+.transparent_blue{
+    background-color: rgba(55, 182, 173, 0.7);
+}
+.transparent_yellow{
+    background-color: rgba(245, 178, 36, 0.5);
+}
+
+.card_main{
+display: flex;
+flex-wrap: wrap;
+
+    .card_box{
+        width: 300px;
+        position: relative;
+        margin-right: 10px;
+        margin-bottom: 10px;
+        background-color: #fff;
+        padding: 10px;
+        border-radius: 10px;
+        .card_head{
+            position: relative;
+            color: #fff;    
+            .event_img{                            
+              border: 0;                                    
+                img{
+                    width: 100%; 
+                    border-radius: 10px;
+                    background: rgba(0, 0, 0, 0.5);
+                }
+            }
+            .top_left{
+                position: absolute;
+                top: 10px;
+                left: 10px;
+                background: #C0C0C0;
+                padding: 5px 10px;
+                border-radius: 5px;
+            }
+            .top_right{
+                position: absolute;
+                top: 10px;
+                right: 10px;
+                background: #C0C0C0;
+                padding: 5px 10px;
+                border-radius: 5px;
+            }
+            .bottom_left{
+                position: absolute;
+                bottom: 10px;
+                left: 10px;
+                padding: 5px 10px;
+                border-radius: 5px;
+            }
+            .bottom_right{
+                position: absolute;
+                bottom: 10px;
+                right: 10px;
+                
+            }
+        }
+        .card_body{
+            .with_icon{
+                > .icon{
+                    display: inline-block;
+                    width: 10%;
+                }
+                >p{
+                    width: 90%;
+                }
+            }
+            .ratings{
+                padding: 0;
+                list-style: none;
+                li{
+                    margin-bottom: 10px;
+                    .progress{
+                        height: 10px;
+                    }
+                }
+            }
+        }
+    }
+}
+.nav-tabs{ border-color: #F5B224;
+    .nav-item{
+        .nav-link{
+            color: #000;
+            &:hover{
+                border-color: transparent;
+            }          
+        }
+        .nav-link.active{
+            background-color: transparent;
+            border-color: transparent;
+            color: #F5B224;
+        }
+    }
+}

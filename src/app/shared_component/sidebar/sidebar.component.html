@@ -1,0 +1,44 @@
+<div class="sidebar p-2 position-relative">
+<h4 class="mb-2">Filter Events</h4>
+<form action="#" [formGroup]="filterdata" (ngSubmit)="onSubmit()">
+    <div class="mb-2" >
+        <label for="location"><strong>Location </strong></label>
+        <select name="" class="form-select" >
+            <option selected>Select</option>
+            <option value="India">India</option>
+            <option value="U.S">U.S</option>
+        </select>
+      </div>
+      <div class="form-group mb-2">
+        <label for="location"><strong>Name </strong></label>
+        <select name="" class="form-select" >
+            <option value="Model" selected>Model</option>
+            <option value="U.S">U.S</option>
+        </select>
+      </div>
+      <div class="form-group mb-2">
+        <label for="location"><strong>Date </strong></label>
+        <div class="d-flex justify-content-between">
+        <input type="date" class="form-control "><span class="mx-2"></span>
+        <input type="date" class="form-control">
+      </div>
+    </div>
+    <div class="form-group mb-2">
+        <label for="location"><strong>Event Type </strong></label>
+        <select name="" class="form-select" >
+            <option value="Type">Type</option>
+            <option value="Type">Type</option>
+        </select>
+      </div>
+      <div class="form-group mb-2">
+        <label for="location"><strong>Event Type </strong></label>
+        <select name="" class="form-select" >
+            <option value="1">Paid Event</option>
+            <option value="2">Free Event</option>
+        </select>
+      </div>
+
+        <button class="btn gradient-btn apply-filter"><i class="fa fa-search"></i> Apply Filter</button>
+
+</form>
+</div>

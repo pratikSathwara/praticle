@@ -1,0 +1,23 @@
+
+
+.navbar-brand{
+    color: #002C62;
+    font-weight: 500;
+    span{
+        color: #F5B224;
+    }
+}
+.login_reg{
+    list-style: none;
+    padding: 0;
+    li{
+        display: inline-block;
+        padding: 7px;
+        &:first-child{
+            a{
+            border-right: 1px solid #ddd;
+            padding: 0 7px;
+        }
+        }
+    }
+}

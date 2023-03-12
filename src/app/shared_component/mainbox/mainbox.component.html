@@ -1,0 +1,192 @@
+<div class="px-3 py-5">
+
+
+
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item" role="presentation">
+          <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Upcoming Events</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Past Events</button>
+        </li>       
+      </ul>
+      <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+            <div class="card_main">
+                <div class="card_box" *ngFor="let card of carddata">
+                    <div class="card_head">
+                        <picture class="event_img">
+                            <!-- <source srcset="/assets/event-1.png">
+                            <source srcset="/assets/event-1.webp"> -->
+                            <img src="/assets/{{card.src}}" alt="Flowers">
+                        </picture>
+                        <span class="top_left">
+                            $ {{card.amount}}
+                        </span>
+                        <span class="top_right" >
+                            <input type="checkbox" [checked]="(card.saved == 'true')? true : false">
+        
+                        </span>
+                        <span class="bottom_left" [ngClass]="(card.subscription == 'paid')? 'transparent_blue': 'transparent_yellow'">
+                            <span class="badge">{{card.subscription}}</span>
+                        </span>
+                        <span class="bottom_right" *ngIf="card.event_type == 'true'">
+                            online event
+                        </span>
+                        <span class="bottom_right" *ngIf="card.event_type == 'false'">
+                            Offline event
+                        </span>
+                    </div>
+                    <div class="card_body p-2">
+                        <p class="mb-0"><span>By : </span> <i class="fa fa-circle-o"></i> {{card.organize_by}}</p>
+                        <h5>{{card.title}}</h5>
+                        <div class="with_icon d-flex">
+                            <span class="icon">
+                                <i class="fa fa-calendar"></i>
+                            </span>
+                            <p class="d-flex justify-content-between mb-0">
+                              <span>From <br>
+                                {{card.from_date}}</span>  
+                                <span>To <br>
+                                    {{card.To_date}}</span>
+                            </p>
+                        </div>
+                        <div class="with_icon d-flex">
+                            <span class="icon">
+                                <i class="fa fa-map-marker"></i>
+                            </span>
+                            <p class="mb-0">
+                                <span>Location </span><br>
+                                    {{card.location}}
+                              </p>
+                        </div>
+                        <ul class="ratings">
+                            <li>
+                                <p class="d-flex justify-content-between">
+                                    <span>Rating</span>
+                                    <span>{{card.rating}}</span>
+                                </p>
+                                <div class="progress">
+                                    <div class="progress-bar bg-warning" role="progressbar" 
+                                    [style.width]="card.rating +'%'"  aria-valuemin="0" aria-valuemax="100"></div>
+                                  </div>
+                            </li>
+                            <li>
+                                <p class="d-flex justify-content-between">
+                                    <span>Recommended</span>
+                                    <span>{{card.Recommended}}</span>
+                                </p>
+                                <div class="progress">
+                                    <div class="progress-bar bg-warning" role="progressbar" 
+                                    [style.width]="card.Recommended +'%'" aria-valuemin="0" aria-valuemax="100"></div>
+                                  </div>
+                            </li>
+                            <li>
+                                <p class="d-flex justify-content-between">
+                                    <span>Upcoming</span>
+                                    <span>{{card.upcomming}}</span>
+                                </p>
+                            </li>
+                            <li>
+                                <p class="d-flex justify-content-between">
+                                    <span>Past</span>
+                                    <span>{{card.past}}</span>
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+        
+            </div>
+        </div>
+        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+            <div class="card_main">
+                <div class="card_box" *ngFor="let card of carddata">
+                    <div class="card_head">
+                        <picture class="event_img">
+                            <!-- <source srcset="/assets/event-1.png">
+                            <source srcset="/assets/event-1.webp"> -->
+                            <img src="/assets/{{card.src}}" alt="Flowers">
+                        </picture>
+                        <span class="top_left">
+                            $ {{card.amount}}
+                        </span>
+                        <span class="top_right" >
+                            <input type="checkbox" [checked]="(card.saved == 'true')? true : false">
+        
+                        </span>
+                        <span class="bottom_left" [ngClass]="(card.subscription == 'paid')? 'transparent_blue': 'transparent_yellow'">
+                            <span class="badge">{{card.subscription}}</span>
+                        </span>
+                        <span class="bottom_right" *ngIf="card.event_type == 'true'">
+                            online event
+                        </span>
+                        <span class="bottom_right" *ngIf="card.event_type == 'false'">
+                            Offline event
+                        </span>
+                    </div>
+                    <div class="card_body p-2">
+                        <p class="mb-0"><span>By : </span> <i class="fa fa-circle-o"></i> {{card.organize_by}}</p>
+                        <h5>{{card.title}}</h5>
+                        <div class="with_icon d-flex">
+                            <span class="icon">
+                                <i class="fa fa-calendar"></i>
+                            </span>
+                            <p class="d-flex justify-content-between mb-0">
+                              <span>From <br>
+                                {{card.from_date}}</span>  
+                                <span>To <br>
+                                    {{card.To_date}}</span>
+                            </p>
+                        </div>
+                        <div class="with_icon d-flex">
+                            <span class="icon">
+                                <i class="fa fa-map-marker"></i>
+                            </span>
+                            <p class="mb-0">
+                                <span>Location </span><br>
+                                    {{card.location}}
+                              </p>
+                        </div>
+                        <ul class="ratings">
+                            <li>
+                                <p class="d-flex justify-content-between">
+                                    <span>Rating</span>
+                                    <span>{{card.rating}}</span>
+                                </p>
+                                <div class="progress">
+                                    <div class="progress-bar bg-warning" role="progressbar" 
+                                    [style.width]="card.rating +'%'"  aria-valuemin="0" aria-valuemax="100"></div>
+                                  </div>
+                            </li>
+                            <li>
+                                <p class="d-flex justify-content-between">
+                                    <span>Recommended</span>
+                                    <span>{{card.Recommended}}</span>
+                                </p>
+                                <div class="progress">
+                                    <div class="progress-bar bg-warning" role="progressbar" 
+                                    [style.width]="card.Recommended +'%'" aria-valuemin="0" aria-valuemax="100"></div>
+                                  </div>
+                            </li>
+                            <li>
+                                <p class="d-flex justify-content-between">
+                                    <span>Upcoming</span>
+                                    <span>{{card.upcomming}}</span>
+                                </p>
+                            </li>
+                            <li>
+                                <p class="d-flex justify-content-between">
+                                    <span>Past</span>
+                                    <span>{{card.past}}</span>
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+        
+            </div>
+        </div>
+      </div>
+
+</div>
